@@ -86,7 +86,7 @@ def validar_opciones(inicio,fin,men):
 def base_de_datos():
     try:
         with open('bases_de_datos.pkl', 'rb') as archivo:
-            base_datos = pickle.load(archivo)
+            base_datos = pickle.load(archivo)                 #Carga la base de datos en .PKL
             return base_datos
     except FileNotFoundError: 
         base_datos = {"nombres" : [],
@@ -102,7 +102,7 @@ def base_de_datos():
 def solo_alfabetico(mensaje):     #Evita que se ingrese un dato diferente a un entero.
     while(True):
         dato = input(mensaje) 
-        if dato.isalpha():        #Condición que solo sean caracteres númericos
+        if dato.isalpha():        #Condición que solo sean caracteres alfabeticos
             return dato    
             break 
         else:
